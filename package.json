@@ -1,0 +1,16 @@
+{
+  "name": "ts-lineage-demo",
+  "version": "1.0.0",
+  "main": "src/index.ts",
+  "type": "module",
+  "scripts": {
+    "extract": "ts-node src/index.ts"
+  },
+  "dependencies": {
+    "ts-morph": "^17.0.1"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0",
+    "ts-node": "^10.9.1"
+  }
+}

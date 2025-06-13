@@ -1,0 +1,115 @@
+{
+  "models": [
+    {
+      "name": "AdvancedDisplay",
+      "file": "/Users/dylan_miska/Repository/ts-lineage-demo/src/models/AdvancedDisplay.ts",
+      "fields": [
+        {
+          "name": "badgeLabel",
+          "assignment": "`[[${val}]]`;",
+          "dependencies": [],
+          "sourceLocation": "constructor:line:12"
+        }
+      ]
+    },
+    {
+      "name": "ComplexLogic",
+      "file": "/Users/dylan_miska/Repository/ts-lineage-demo/src/models/ComplexLogic.ts",
+      "fields": [
+        {
+          "name": "category",
+          "assignment": "cat;",
+          "dependencies": [],
+          "sourceLocation": "constructor:line:13"
+        }
+      ]
+    },
+    {
+      "name": "MapModel",
+      "file": "/Users/dylan_miska/Repository/ts-lineage-demo/src/models/MapModel.ts",
+      "fields": [
+        {
+          "name": "result",
+          "assignment": "parts.map((x) => x.toUpperCase()).join(\"::\");",
+          "dependencies": [
+            "parts.map",
+            "x.toUpperCase"
+          ],
+          "sourceLocation": "constructor:line:8"
+        }
+      ]
+    },
+    {
+      "name": "UserDisplay",
+      "file": "/Users/dylan_miska/Repository/ts-lineage-demo/src/models/UserDisplay.ts",
+      "fields": [
+        {
+          "name": "nameLabel",
+          "assignment": "temp.toUpperCase();",
+          "dependencies": [
+            "temp.toUpperCase"
+          ],
+          "sourceLocation": "constructor:line:13"
+        },
+        {
+          "name": "statusLabel",
+          "assignment": "status;",
+          "dependencies": [],
+          "sourceLocation": "constructor:line:15"
+        }
+      ]
+    },
+    {
+      "name": "UserView",
+      "file": "/Users/dylan_miska/Repository/ts-lineage-demo/src/models/UserView.ts",
+      "fields": [
+        {
+          "name": "fullName",
+          "assignment": "`[${tempName}]`;",
+          "dependencies": [],
+          "sourceLocation": "constructor:line:14"
+        },
+        {
+          "name": "isAdult",
+          "assignment": "adult;",
+          "dependencies": [],
+          "sourceLocation": "constructor:line:16"
+        },
+        {
+          "name": "regionCode",
+          "assignment": "user.meta.region;",
+          "dependencies": [
+            "user.meta"
+          ],
+          "sourceLocation": "constructor:line:17"
+        }
+      ]
+    }
+  ],
+  "functions": [
+    {
+      "name": "nestedTransformation",
+      "file": "/Users/dylan_miska/Repository/ts-lineage-demo/src/models/AdvancedDisplay.ts",
+      "params": [
+        "user"
+      ],
+      "body": "const initial = user.firstName.charAt(0);\nreturn user.meta.verified ? `VERIFIED-${initial}` : `UNVERIFIED-${initial}`;"
+    },
+    {
+      "name": "deriveStatus",
+      "file": "/Users/dylan_miska/Repository/ts-lineage-demo/src/models/UserDisplay.ts",
+      "params": [
+        "isAdult"
+      ],
+      "body": "return isAdult ? \"Adult\" : \"Minor\";"
+    },
+    {
+      "name": "formatFullName",
+      "file": "/Users/dylan_miska/Repository/ts-lineage-demo/src/models/UserView.ts",
+      "params": [
+        "user"
+      ],
+      "body": "return user.firstName.toUpperCase() + \" \" + user.lastName.toLowerCase();"
+    }
+  ]
+}

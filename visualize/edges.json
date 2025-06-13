@@ -1,0 +1,6 @@
+[
+  {
+    "from": "User.meta",
+    "to": "UserView.regionCode"
+  }
+]
